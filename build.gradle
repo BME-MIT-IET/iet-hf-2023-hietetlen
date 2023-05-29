@@ -9,10 +9,19 @@ allprojects {
 repositories {
     mavenCentral()
 }
+
 sourceSets {
     main {
         java {
             srcDirs = ['src']
+        }
+    }
+    test {
+        java {
+            srcDirs = ['test']
+        }
+        resources {
+            srcDirs = ['test']
         }
     }
 }
