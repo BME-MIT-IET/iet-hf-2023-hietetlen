@@ -1,6 +1,6 @@
 Feature: Initialize a New Game
 
-  @InitializeGame
+  @FivePlayers
   Scenario: Initialize the game board with five virologists
     When one of the players presses the add player button
     And restarts the game
