@@ -81,7 +81,7 @@ public class SubstanceContainer {
      */
     public boolean use(SubstanceContainer sc) {
         if (sc.nucleotid > nucleotid || sc.aminoAcid > aminoAcid) return false;
-        nucleotid =- sc.nucleotid;
+        nucleotid -= sc.nucleotid;
         aminoAcid -= sc.aminoAcid;
         return true;
     }
