@@ -1,4 +1,4 @@
-package cucumber;
+package implementation;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         tags = "@tags",
         //plugin = {"pretty", "html:target/cucumber-report.html"},
         features = {"test/resources"},
-        glue = {"hietetlen.cucumber"}
+        glue = {"implementation.hietetlen.cucumber"}
 )
 @RunWith(Cucumber.class)
 public class RunCucumberTest {

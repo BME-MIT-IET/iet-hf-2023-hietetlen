@@ -1,4 +1,4 @@
-package hietetlen.cucumber;
+package implementation.hietetlen.cucumber;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -17,17 +17,16 @@ public class InitializeGame {
     @When("one of the players presses start")
     public void oneOfThePlayersPressesStart() {
         gameFrame = new GameFrame();
-        gameFrame.getJMenuBar().getMenu(0).getItem(1).doClick();
         gameFrame.getJMenuBar().getMenu(0).getItem(0).doClick();
     }
 
     @Then("The tiles get created")
     public void theTilesGetCreated() {
-        assertTrue(LevelManager.getInstance().getTiles().size() >= 5);
+        assertTrue(LevelManager.getInstance().getTiles().size() >= 4);
     }
 
     @And("the virologists are placed on the board")
     public void theVirologistsArePlacedOnTheBoard() {
-        assertEquals(5, LevelManager.getInstance().getVirologists().size());
+        assertEquals(4, LevelManager.getInstance().getVirologists().size());
     }
 }
