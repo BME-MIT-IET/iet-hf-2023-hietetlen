@@ -23,6 +23,7 @@ import View.TileViews.WarehouseView;
 import View.VirologistView;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.function.Supplier;
@@ -193,6 +194,10 @@ public class LevelManager {
         tiles.add(sh2);
         tiles.add(sh3);
         tiles.add(sh4);
+    }
+
+    public void addTiles(Collection<Tile> tiles) {
+        tiles.addAll(tiles);
     }
 
     public void createTileView(Tile t) {
