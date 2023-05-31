@@ -96,7 +96,7 @@ public class Virologist extends DefaultSubject<Virologist> implements Interactio
      *
      * @return The list of Agents currently owned by the Virologist
      */
-    public List<Agent> GetAgents() {
+    public List<Agent> getAgents() {
         return agents;
     }
 
@@ -158,14 +158,13 @@ public class Virologist extends DefaultSubject<Virologist> implements Interactio
     @Override
     public void move(Tile t) {
         if (t == null) throw new IllegalArgumentException("Method paramenter cannot be null");
-        if (ExecuteBehaviours(Signal.Passed, (b) -> b.move(this, t)) == Signal.Passed) {
-            if (currentTile.getNeighbours().contains(t)) {
+        if (executeBehaviours(Signal.Passed, (b) -> b.move(this, t)) == Signal.Passed && currentTile.getNeighbours().contains(t)) {
                 currentTile.removeVirologist(this);
                 currentTile = t;
                 currentTile.addVirologist(this);
                 notifyObservers(EventType.Any);
                 RoundManager.getInstance().completeMove();
-            }
+            
         }
     }
 
@@ -229,7 +228,7 @@ public class Virologist extends DefaultSubject<Virologist> implements Interactio
     @Override
     public void useEquipment(Equipment eq, Virologist on) {
         if (!equipments.contains(eq) || !currentTile.getVirologists().contains(on)) throw new IllegalArgumentException("The Virologist doesn't own this Equipment.");
-        if (ExecuteBehaviours(Signal.Failed, b -> b.useEquipment(eq, on)) == Signal.Passed) RoundManager.getInstance().completeAction();
+        if (executeBehaviours(Signal.Failed, b -> b.useEquipment(eq, on)) == Signal.Passed) RoundManager.getInstance().completeAction();
     }
 
     //endregion
@@ -242,7 +241,7 @@ public class Virologist extends DefaultSubject<Virologist> implements Interactio
      * It allows them to initiate actions before the player controller.
      */
     public void roundInit() {
-        ExecuteBehaviours(Signal.Passed, b -> b.roundInit(this));
+        executeBehaviours(Signal.Passed, b -> b.roundInit(this));
     }
 
     /**
@@ -267,7 +266,7 @@ public class Virologist extends DefaultSubject<Virologist> implements Interactio
      * @return Whether the stealing was successful (true) or not (false).
      */
     public boolean getRobbed(Virologist v, boolean isEquipment){
-        if (ExecuteBehaviours(Signal.Failed, b -> b.getRobbed(this, v, isEquipment)) == Signal.Passed) {
+        if (executeBehaviours(Signal.Failed, b -> b.getRobbed(this, v, isEquipment)) == Signal.Passed) {
             Random rnd = new Random();
 
             if (isEquipment) {
@@ -316,7 +315,7 @@ public class Virologist extends DefaultSubject<Virologist> implements Interactio
     public boolean addAgent(Virologist v, Agent a){
         if (v == null || a == null) throw new IllegalArgumentException("Parameters cannot be null");
 
-        if (ExecuteBehaviours(Signal.Passed, b -> b.addAgent(this, v, a)) == Signal.Passed) {
+        if (executeBehaviours(Signal.Passed, b -> b.addAgent(this, v, a)) == Signal.Passed) {
             a.applyEffect(this);
             return true;
         }
@@ -354,12 +353,12 @@ public class Virologist extends DefaultSubject<Virologist> implements Interactio
 
     //region Private Methods
 
-    private Signal ExecuteBehaviours(final Signal sDefault, Function<Behaviour, Signal> operation) {
+    private Signal executeBehaviours(final Signal sDefault, Function<Behaviour, Signal> operation) {
         Signal result = sDefault;
         for (Behaviour b : behaviours) {
             Signal sTemp = operation.apply(b);
             if (sTemp == Signal.Interrupted) return sTemp;
-            if (!(sTemp == sDefault)) result = sTemp;
+            if (sTemp != sDefault) result = sTemp;
         }
         return result;
     }

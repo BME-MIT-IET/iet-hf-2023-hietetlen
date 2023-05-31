@@ -221,7 +221,6 @@ public class RoundManager extends DefaultSubject<RoundManager> implements Intera
      * Finishes the game and prints out the winner to the console.
      */
     public void finishGame() {
-        //TODO
         System.out.println("The number " + currentVirologistIndex + " won the game!");
         gameStarted = false;
         notifyObservers(EventType.GameWon);

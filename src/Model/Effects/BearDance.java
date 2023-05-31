@@ -53,14 +53,4 @@ public class BearDance extends VitusDance {
     public Signal addAgent(Virologist to, Virologist from, Agent a) {
         return (a.getGeneticCode() == gc) ? Signal.Failed : super.addAgent(to, from, a);
     }
-
-    /**
-     * The BearVirus cannot be cured.
-     *
-     * @param v The virologist whom the effect is removed from.
-     */
-    @Override
-    public void remove(Virologist v) {
-    }
-
 }
