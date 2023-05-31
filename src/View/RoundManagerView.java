@@ -101,6 +101,7 @@ public class RoundManagerView extends JPanel implements Observer<RoundManager> {
         JPanel roundCompleteContainer = new JPanel(new BorderLayout());
         roundCompleteContainer.setBorder(BorderFactory.createEmptyBorder(6,6,6,6));
         JButton roundCompleteButton = new JButton("ROUND COMPLETED");
+        roundCompleteButton.setName("roundCompleteButton");
         roundCompleteButton.setPreferredSize(new Dimension(238, 62));
         roundCompleteButton.addActionListener(ae -> RoundManager.getInstance().roundCompleted());
         roundCompleteContainer.add(roundCompleteButton, BorderLayout.CENTER);
