@@ -61,7 +61,7 @@ public class GameFrame extends JFrame {
     }
 
     public void onRestart () {
-        LevelManager.getInstance().createLevel("", playerCount);
+        LevelManager.getInstance().createLevel(playerCount);
         java.util.List<Virologist> vs = LevelManager.getInstance().getVirologists();
         RoundManager.getInstance().start(vs);
         if (rmv != null) {

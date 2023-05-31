@@ -33,10 +33,10 @@ public class LevelManager {
     private HashMap<String, GeneticCode> allGc = new HashMap<>();
     private List<GeneticCode> liveGcs = new ArrayList<>();
 
-    private static final string immunityString = "immunity";
-    private static final string stunningString = "stunning";
-    private static final string memorylossString = "memoryloss";
-    private static final string vitusdanceString = "vitusdance";
+    private static final String immunityString = "immunity";
+    private static final String stunningString = "stunning";
+    private static final String memorylossString = "memoryloss";
+    private static final String vitusdanceString = "vitusdance";
 
     //region Views
     private HashMap<Virologist, VirologistView> virogistViews = new HashMap<>();

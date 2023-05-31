@@ -5,88 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1be69f05-5871-429a-9bc4-f6c27f39fd1d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/test/RunCucumberTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/checksums/checksums.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/dependencies-accessors/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/bizonyjo_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/project-template.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/Control/LevelManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/Control/RoundManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/Model/Behaviour.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/Model/Effect.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/Model/EffectHolder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/Model/EffectHolders/Agent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/Model/EffectHolders/Equipment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/Model/Effects/Axe.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/Model/Effects/Bag.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/Model/Effects/BearDance.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/Model/Effects/Death.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/Model/Effects/Glove.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/Model/Effects/Immunity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/Model/Effects/MemoryLoss.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/Model/Effects/Stunning.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/Model/Effects/Vaccine.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/Model/Effects/VitusDance.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/Model/GeneticCode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/Model/InteractionSet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/Model/SubstanceContainer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/Model/Tiles/InfectedLab.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/Model/Tiles/Lab.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/Model/Tiles/Shelter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/Model/Tiles/Tile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/Model/Tiles/Warehouse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/Model/Virologist.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/Utils/DefaultSubject$ObserverData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/Utils/DefaultSubject.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/Utils/EventType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/Utils/Observer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/Utils/Signal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/Utils/Subject.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/View/AgentView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/View/EquipmentView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/View/EquipmentViews/AxeView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/View/EquipmentViews/BagView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/View/EquipmentViews/CapeView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/View/EquipmentViews/GloveView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/View/GameFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/View/GeneticCodeView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/View/GeneticCodeViews/ImmunityView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/View/GeneticCodeViews/MemoryLossView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/View/GeneticCodeViews/StunningView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/View/GeneticCodeViews/VitusDanceView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/View/RoundManagerView$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/View/RoundManagerView$VirologistBox.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/View/RoundManagerView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/View/TileView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/View/TileViews/InfectedLabView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/View/TileViews/LabView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/View/TileViews/ShelterView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/View/TileViews/WarehouseView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bizonyjo/View/VirologistView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/LevelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/LevelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/GeneticCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/GeneticCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Tiles/InfectedLab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Tiles/InfectedLab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Virologist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Virologist.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,6 +44,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />

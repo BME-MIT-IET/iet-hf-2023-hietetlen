@@ -87,10 +87,6 @@ public class Virologist extends DefaultSubject<Virologist> implements Interactio
         return equipments;
     }
 
-    public List<Agent> getAgents() {
-        return agents;
-    }
-
     /**
      * Returns the list of Agents currently owned by the Virologist.
      *
