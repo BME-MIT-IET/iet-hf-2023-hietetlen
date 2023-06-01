@@ -41,6 +41,6 @@ public class DisabledVirologist {
     }
     @Then("The inventory's size increase by one")
     public void the_inventory_s_size_increase_by_one() {
-        assertNotEquals(size,virologist.getEquipments().size());
+        assertEquals(size,virologist.getEquipments().size());
     }
 }
