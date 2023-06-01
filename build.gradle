@@ -1,5 +1,13 @@
 plugins {
     id 'java'
+    id "org.sonarqube" version "3.5.0.2730"
+}
+sonarqube {
+  properties {
+    property "sonar.projectKey", "BME-MIT-IET_iet-hf-2023-hietetlen"
+    property "sonar.organization", "bme-mit-iet-org"
+    property "sonar.host.url", "https://sonarcloud.io"
+  }
 }
 allprojects {
     group 'org.example'

@@ -17,7 +17,7 @@ import java.util.Random;
  */
 public class InfectedLab extends Lab {
     float infectionLevel;
-    private static GeneticCode bearDance;
+    private GeneticCode bearDance;
     Agent infection;
     Random rnd;
     List<Virologist> infected = new ArrayList<>();

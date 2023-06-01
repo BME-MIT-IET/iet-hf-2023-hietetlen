@@ -33,6 +33,11 @@ public class LevelManager {
     private HashMap<String, GeneticCode> allGc = new HashMap<>();
     private List<GeneticCode> liveGcs = new ArrayList<>();
 
+    private static final String immunityString = "immunity";
+    private static final String stunningString = "stunning";
+    private static final String memorylossString = "memoryloss";
+    private static final String vitusdanceString = "vitusdance";
+
     //region Views
     private HashMap<Virologist, VirologistView> virogistViews = new HashMap<>();
     private HashMap<GeneticCode, GeneticCodeView> geneticCodeViews = new HashMap<>();
@@ -42,10 +47,10 @@ public class LevelManager {
 
     private static LevelManager instance = new LevelManager();
     private LevelManager() {
-        allGc.put("immunity", new GeneticCode(() -> new Immunity(1), new SubstanceContainer(20, 20), 2));
-        allGc.put("stunning", new GeneticCode(() -> new Stunning(), new SubstanceContainer(20, 20), 2));
-        allGc.put("memoryloss", new GeneticCode(() -> new MemoryLoss(), new SubstanceContainer(20, 20), 2));
-        allGc.put("vitusdance", new GeneticCode(() -> new VitusDance(), new SubstanceContainer(20, 20), 2));
+        allGc.put(immunityString, new GeneticCode(() -> new Immunity(1), new SubstanceContainer(20, 20), 2));
+        allGc.put(stunningString, new GeneticCode(() -> new Stunning(), new SubstanceContainer(20, 20), 2));
+        allGc.put(memorylossString, new GeneticCode(() -> new MemoryLoss(), new SubstanceContainer(20, 20), 2));
+        allGc.put(vitusdanceString, new GeneticCode(() -> new VitusDance(), new SubstanceContainer(20, 20), 2));
     }
     public static LevelManager getInstance() {
         return instance;
@@ -69,7 +74,7 @@ public class LevelManager {
         return tileViews.get(t);
     }
 
-    public void createLevel(String levelPath, int n) {
+    public void createLevel(int n) {
         generateTiles();
         addVirologists(n);
     }
@@ -77,16 +82,16 @@ public class LevelManager {
     public void generateTiles() {
         tiles.clear();
         liveGcs.clear();
-        geneticCodeViews.put(allGc.get("stunning"), new StunningView(allGc.get("stunning")));
-        geneticCodeViews.put(allGc.get("immunity"), new ImmunityView(allGc.get("immunity")));
-        geneticCodeViews.put(allGc.get("memoryloss"), new MemoryLossView(allGc.get("memoryloss")));
-        geneticCodeViews.put(allGc.get("vitusdance"), new VitusDanceView(allGc.get("vitusdance")));
+        geneticCodeViews.put(allGc.get(stunningString), new StunningView(allGc.get(stunningString)));
+        geneticCodeViews.put(allGc.get(immunityString), new ImmunityView(allGc.get(immunityString)));
+        geneticCodeViews.put(allGc.get(memorylossString), new MemoryLossView(allGc.get(memorylossString)));
+        geneticCodeViews.put(allGc.get(vitusdanceString), new VitusDanceView(allGc.get(vitusdanceString)));
 
         // Generating new tiles
 
-        InfectedLab il1 = new InfectedLab(allGc.get("stunning"), 50);
+        InfectedLab il1 = new InfectedLab(allGc.get(stunningString), 50);
         createInfectedLabView(il1);
-        liveGcs.add(allGc.get("stunning"));
+        liveGcs.add(allGc.get(stunningString));
 
         Tile t1 = new Tile();
         createTileView(t1);
@@ -97,17 +102,17 @@ public class LevelManager {
         Tile t4 = new Tile();
         createTileView(t4);
 
-        Lab l1 = new Lab(allGc.get("immunity"));
+        Lab l1 = new Lab(allGc.get(immunityString));
         createLabView(l1);
-        liveGcs.add(allGc.get("immunity"));
+        liveGcs.add(allGc.get(immunityString));
 
-        Lab l2 = new Lab(allGc.get("memoryloss"));
+        Lab l2 = new Lab(allGc.get(memorylossString));
         createLabView(l2);
-        liveGcs.add(allGc.get("memoryloss"));
+        liveGcs.add(allGc.get(memorylossString));
 
-        Lab l3 = new Lab(allGc.get("vitusdance"));
+        Lab l3 = new Lab(allGc.get(vitusdanceString));
         createLabView(l3);
-        liveGcs.add(allGc.get("vitusdance"));
+        liveGcs.add(allGc.get(vitusdanceString));
 
         Warehouse w1 = new Warehouse();
         createWarehouseView(w1);
@@ -247,13 +252,5 @@ public class LevelManager {
      */
     public List<Virologist> getVirologists(){
         return virologists;
-    }
-
-    public void save(List<String> args){
-        // TODO
-    }
-
-    public void load(List<String> args){
-        // TODO
     }
 }
