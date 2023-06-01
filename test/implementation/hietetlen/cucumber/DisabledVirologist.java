@@ -35,7 +35,7 @@ public class DisabledVirologist {
         virologist.addAgent(virologist,agent);
         size = virologist.getEquipments().size();
     }
-    @Then("The virologist press interact button")
+    @Then("Press the interact button by the virologist")
     public void the_virologist_press_interact_button() {
         virologist.tileInteract();
     }
