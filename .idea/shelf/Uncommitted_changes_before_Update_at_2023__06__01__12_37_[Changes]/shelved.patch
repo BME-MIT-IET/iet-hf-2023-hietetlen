@@ -1,0 +1,429 @@
+Index: .idea/modules.xml
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+deleted file mode 100644
+--- a/.idea/modules.xml	(revision 1d1e86759c0451cfd4dfca215aefc11a10f07858)
++++ /dev/null	(revision 1d1e86759c0451cfd4dfca215aefc11a10f07858)
+@@ -1,8 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="ProjectModuleManager">
+-    <modules>
+-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hietetlen.iml" filepath="$PROJECT_DIR$/.idea/modules/hietetlen.iml" />
+-    </modules>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: build/resources/test/resources/features/initialize-game.feature
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>Feature: Initialize a New Game\r\n\r\n@InitializeGame\r\nScenario: Initialize the game board with five virologists\r\n  When one of the players presses start\r\n  Then The tiles get created\r\n  And the virologists are placed on the board
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/build/resources/test/resources/features/initialize-game.feature b/build/resources/test/resources/features/initialize-game.feature
+--- a/build/resources/test/resources/features/initialize-game.feature	(revision 1d1e86759c0451cfd4dfca215aefc11a10f07858)
++++ b/build/resources/test/resources/features/initialize-game.feature	(date 1685615006841)
+@@ -1,7 +1,7 @@
+ Feature: Initialize a New Game
+ 
+ @InitializeGame
+-Scenario: Initialize the game board with five virologists
++Scenario: Initialize the game board with default values
+   When one of the players presses start
+   Then The tiles get created
+   And the virologists are placed on the board
+\ No newline at end of file
+Index: test/implementation/hietetlen/cucumber/FullInventory.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/test/implementation/hietetlen/cucumber/FullInventory.java b/test/implementation/hietetlen/cucumber/FullInventory.java
+new file mode 100644
+--- /dev/null	(date 1685610867775)
++++ b/test/implementation/hietetlen/cucumber/FullInventory.java	(date 1685610867775)
+@@ -0,0 +1,41 @@
++package implementation.hietetlen.cucumber;
++
++
++import Model.EffectHolders.Equipment;
++import Model.Effects.Axe;
++import Model.Effects.Glove;
++import Model.Tiles.Shelter;
++import Model.Tiles.Tile;
++import Model.Virologist;
++import io.cucumber.java.en.But;
++import io.cucumber.java.en.Given;
++import io.cucumber.java.en.Then;
++
++import static org.junit.Assert.assertNotEquals;
++
++public class FullInventory {
++    Virologist virologist;
++    Tile tile;
++    Axe axe;
++    Equipment equipment;
++    @Given("A virologist with full inventory and a tile with an axe on it")
++    public void a_virologist_with_full_inventory_and_a_tile_with_an_axe_on_it() {
++        axe = new Axe();
++        equipment = new Equipment(axe);
++        tile = new Shelter(equipment);
++        virologist = new Virologist(tile);
++        for (int i = 0;i<virologist.getMaxEq();i++){
++            Glove glove = new Glove();
++            virologist.addEquipment(new Equipment((glove)));
++        }
++    }
++    @Then("The virologist press interact with the tile")
++    public void the_virologist_press_interact_button(){
++        virologist.tileInteract();
++    }
++
++    @Then("The virologist inventory does not contain an axe")
++    public void the_virologist_inventory_does_not_contain_an_axe() {
++        assertNotEquals(true,virologist.getEquipments().contains(equipment));
++    }
++}
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_11\" default=\"true\" project-jdk-name=\"11\" project-jdk-type=\"JavaSDK\" />\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 1d1e86759c0451cfd4dfca215aefc11a10f07858)
++++ b/.idea/misc.xml	(date 1685557939592)
+@@ -1,5 +1,8 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ExternalStorageConfigurationManager" enabled="true" />
++  <component name="FrameworkDetectionExcludesConfiguration">
++    <file type="web" url="file://$PROJECT_DIR$" />
++  </component>
+   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
+ </project>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"1be69f05-5871-429a-9bc4-f6c27f39fd1d\" name=\"Changes\" comment=\"\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ExternalProjectsData\">\r\n    <projectState path=\"$PROJECT_DIR$\">\r\n      <ProjectState />\r\n    </projectState>\r\n  </component>\r\n  <component name=\"ExternalProjectsManager\">\r\n    <system id=\"GRADLE\">\r\n      <state>\r\n        <projects_view>\r\n          <tree_state>\r\n            <expand>\r\n              <path>\r\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\r\n                <item name=\"hietetlen\" type=\"f1a62948:ProjectNode\" />\r\n              </path>\r\n            </expand>\r\n            <select />\r\n          </tree_state>\r\n        </projects_view>\r\n      </state>\r\n    </system>\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2QOECEkZELd4WeoLQXIRvnNYhRv\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\r\n    <property name=\"project.structure.last.edited\" value=\"SDKs\" />\r\n    <property name=\"project.structure.proportion\" value=\"0.0\" />\r\n    <property name=\"project.structure.side.proportion\" value=\"0.0\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"preferences.pluginManager\" />\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Main\" />\r\n      <module name=\"hietetlen\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Main\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"1be69f05-5871-429a-9bc4-f6c27f39fd1d\" name=\"Changes\" comment=\"\" />\r\n      <created>1685216098735</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1685216098735</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 1d1e86759c0451cfd4dfca215aefc11a10f07858)
++++ b/.idea/workspace.xml	(date 1685563240513)
+@@ -4,7 +4,23 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="1be69f05-5871-429a-9bc4-f6c27f39fd1d" name="Changes" comment="" />
++    <list default="true" id="1be69f05-5871-429a-9bc4-f6c27f39fd1d" name="Changes" comment="">
++      <change afterPath="$PROJECT_DIR$/test/implementation/hietetlen/cucumber/DisabledVirologist.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/test/implementation/hietetlen/cucumber/VirologistBearDance.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/test/resources/features/disable-virologist-try-pickup-item.feature" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/test/resources/features/virologist-bear-dancing.feature" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.bin" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.lock" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.bin" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.lock" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/resources/test/resources/features/initialize-game.feature" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/test/resources/features/initialize-game.feature" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -40,6 +56,11 @@
+     </option>
+   </component>
+   <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="main" />
++      </map>
++    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="MarkdownSettingsMigration">
+@@ -50,16 +71,16 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">
+-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+-    <property name="project.structure.last.edited" value="SDKs" />
+-    <property name="project.structure.proportion" value="0.0" />
+-    <property name="project.structure.side.proportion" value="0.0" />
+-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+-  </component>
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "WebServerToolWindowFactoryState": "false",
++    "node.js.detected.package.eslint": "true",
++    "node.js.detected.package.tslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
++    "node.js.selected.package.tslint": "(autodetect)",
++    "vue.rearranger.settings.migration": "true"
++  }
++}]]></component>
+   <component name="RunManager">
+     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="Main" />
+@@ -82,8 +103,13 @@
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+       <updated>1685216098735</updated>
++      <workItem from="1685479661815" duration="5737000" />
++      <workItem from="1685557637286" duration="4568000" />
+     </task>
+     <servers />
++  </component>
++  <component name="TypeScriptGeneratedFilesManager">
++    <option name="version" value="3" />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+     <option name="TAB_STATES">
+Index: test/resources/features/virologist-with-full-inventory.feature
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/test/resources/features/virologist-with-full-inventory.feature b/test/resources/features/virologist-with-full-inventory.feature
+new file mode 100644
+--- /dev/null	(date 1685610547279)
++++ b/test/resources/features/virologist-with-full-inventory.feature	(date 1685610547279)
+@@ -0,0 +1,6 @@
++Feature: Virologist with full inventory
++
++  Scenario: A virologist tries to pick up an item while it's inventory is full
++    Given A virologist with full inventory and a tile with an axe on it
++    Then The virologist press interact with the tile
++    But The virologist inventory does not contain an axe
+Index: test/implementation/hietetlen/cucumber/InvetorySameTypeItem.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/test/implementation/hietetlen/cucumber/InvetorySameTypeItem.java b/test/implementation/hietetlen/cucumber/InvetorySameTypeItem.java
+new file mode 100644
+--- /dev/null	(date 1685613693751)
++++ b/test/implementation/hietetlen/cucumber/InvetorySameTypeItem.java	(date 1685613693751)
+@@ -0,0 +1,39 @@
++package implementation.hietetlen.cucumber;
++
++import Model.EffectHolders.Equipment;
++import Model.Effects.Axe;
++import Model.Tiles.Shelter;
++import Model.Tiles.Tile;
++import Model.Virologist;
++import io.cucumber.java.an.E;
++import io.cucumber.java.bs.A;
++import io.cucumber.java.en.Given;
++import io.cucumber.java.en.Then;
++
++import static org.junit.Assert.assertEquals;
++
++public class InvetorySameTypeItem {
++    Virologist virologist;
++    Tile tile;
++
++    @Given("A virologist with an axe on it's inventory and a tile with the same type of item on it")
++    public void a_virologist_with_an_axe_on_it_s_inventory_and_a_tile_with_the_same_type_of_item_on_it() {
++        Axe axe1 = new Axe();
++        Axe axe2 = new Axe();
++        Equipment eq1 = new Equipment(axe1);
++        Equipment eq2 = new Equipment(axe2);
++        tile = new Shelter(eq1);
++        virologist = new Virologist(tile);
++        virologist.addEquipment(eq2);
++    }
++
++    @Then("The virologist try to pick up the item")
++    public void the_virologist_try_to_pick_up_the_item() {
++        virologist.tileInteract();
++    }
++
++    @Then("The virologist has two of the same type item")
++    public void the_virologist_has_two_of_the_same_type_item() {
++        assertEquals(true, virologist.getEquipments().size() == 2);
++    }
++}
+Index: test/implementation/hietetlen/cucumber/DisabledVirologist.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/test/implementation/hietetlen/cucumber/DisabledVirologist.java b/test/implementation/hietetlen/cucumber/DisabledVirologist.java
+new file mode 100644
+--- /dev/null	(date 1685562977255)
++++ b/test/implementation/hietetlen/cucumber/DisabledVirologist.java	(date 1685562977255)
+@@ -0,0 +1,46 @@
++package implementation.hietetlen.cucumber;
++
++import Model.Effect;
++import Model.EffectHolders.Agent;
++import Model.EffectHolders.Equipment;
++import Model.Effects.Axe;
++import Model.Effects.Stunning;
++import Model.GeneticCode;
++import Model.SubstanceContainer;
++import Model.Tiles.Shelter;
++import Model.Tiles.Tile;
++import Model.Virologist;
++import io.cucumber.java.an.E;
++import io.cucumber.java.bs.A;
++import io.cucumber.java.en.Given;
++import io.cucumber.java.en.Then;
++
++import java.util.function.Supplier;
++
++import static org.junit.jupiter.api.Assertions.assertEquals;
++import static org.junit.jupiter.api.Assertions.assertNotEquals;
++
++public class DisabledVirologist {
++    Virologist virologist;
++    Tile tile;
++    int size = 0;
++    @Given("A Tile with an item on it and a disabled virologist")
++    public void a_tile_with_an_item_on_it_and_a_disabled_virologist() {
++        Axe axe = new Axe();
++        Equipment equipment = new Equipment(axe);
++        tile = new Shelter(equipment);
++        virologist = new Virologist(tile);
++        GeneticCode gc =  new GeneticCode(() -> new Stunning(), new SubstanceContainer(20, 20), 2);
++        Agent agent = new Agent(gc, new Stunning(),false);
++        virologist.addAgent(virologist,agent);
++        size = virologist.getEquipments().size();
++    }
++    @Then("The virologist press interact button")
++    public void the_virologist_press_interact_button() {
++        virologist.tileInteract();
++    }
++    @Then("The inventory's size increase by one")
++    public void the_inventory_s_size_increase_by_one() {
++        assertNotEquals(size,virologist.getEquipments().size());
++    }
++}
+Index: test/resources/features/virologist-bear-dancing.feature
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/test/resources/features/virologist-bear-dancing.feature b/test/resources/features/virologist-bear-dancing.feature
+new file mode 100644
+--- /dev/null	(date 1685615006642)
++++ b/test/resources/features/virologist-bear-dancing.feature	(date 1685615006642)
+@@ -0,0 +1,7 @@
++Feature: The virologist got infected by bear dance virus
++
++Scenario: One virologist infect an another virologist with bear dance virus
++  Given The two virologist on the same tile one with bear dance virus
++  Then The first virologist infect the other with bear dance virus
++  Then The second virologist tries to step
++  But The second virologist cannot step due to the virus
+\ No newline at end of file
+Index: test/resources/features/virologist-pick-up-same-item.feature
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/test/resources/features/virologist-pick-up-same-item.feature b/test/resources/features/virologist-pick-up-same-item.feature
+new file mode 100644
+--- /dev/null	(date 1685613277104)
++++ b/test/resources/features/virologist-pick-up-same-item.feature	(date 1685613277104)
+@@ -0,0 +1,5 @@
++Feature: Virologist pick up same item
++  Scenario: The virologist tries to pick up an item of a type of which he already has
++    Given A virologist with an axe on it's inventory and a tile with the same type of item on it
++    Then The virologist try to pick up the item
++    Then The virologist has two of the same type item
+\ No newline at end of file
+Index: test/resources/features/disable-virologist-try-pickup-item.feature
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/test/resources/features/disable-virologist-try-pickup-item.feature b/test/resources/features/disable-virologist-try-pickup-item.feature
+new file mode 100644
+--- /dev/null	(date 1685559712898)
++++ b/test/resources/features/disable-virologist-try-pickup-item.feature	(date 1685559712898)
+@@ -0,0 +1,6 @@
++Feature: Disabled virologist tries pick up item
++
++  Scenario: Disabled virologist tries pick up item from the tile
++    Given A Tile with an item on it and a disabled virologist
++    Then The virologist press interact button
++    Then The inventory's size increase by one
+\ No newline at end of file
+Index: test/implementation/hietetlen/cucumber/VirologistBearDance.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/test/implementation/hietetlen/cucumber/VirologistBearDance.java b/test/implementation/hietetlen/cucumber/VirologistBearDance.java
+new file mode 100644
+--- /dev/null	(date 1685615343893)
++++ b/test/implementation/hietetlen/cucumber/VirologistBearDance.java	(date 1685615343893)
+@@ -0,0 +1,52 @@
++package implementation.hietetlen.cucumber;
++
++import static org.junit.jupiter.api.Assertions.*;
++
++import Control.LevelManager;
++import Control.RoundManager;
++import Model.EffectHolders.Agent;
++import Model.Effects.BearDance;
++import Model.GeneticCode;
++import Model.SubstanceContainer;
++import Model.Tiles.Tile;
++import Model.Virologist;
++import io.cucumber.java.en.And;
++import io.cucumber.java.en.Given;
++import io.cucumber.java.en.Then;
++import io.cucumber.java.en.When;
++
++import View.GameFrame;
++
++public class VirologistBearDance {
++    private Virologist firstVirologist;
++    private Virologist secondVirologist;
++    Tile tile1;
++    Tile tile2;
++    @Given("The two virologist on the same tile one with bear dance virus")
++    public void the_two_virologist_on_the_same_tile_one_with_bear_dance_virus() {
++        tile1 = new Tile();
++        tile2 = new Tile();
++        tile1.setNeighbours(tile2);
++        tile2.setNeighbours(tile1);
++        firstVirologist = new Virologist(tile1);
++        secondVirologist = new Virologist(tile1);
++
++        GeneticCode bearDance = new GeneticCode(() -> new BearDance(), new SubstanceContainer(20, 20), 2);
++        firstVirologist.addBehaviour();
++    }
++    @Then("The first virologist infect the other with bear dance virus")
++    public void the_first_virologist_infect_the_other_with_bear_dance_virus() {
++        // Write code here that turns the phrase above into concrete actions
++        throw new io.cucumber.java.PendingException();
++    }
++    @Then("The second virologist tries to step")
++    public void the_second_virologist_tries_to_step() {
++        // Write code here that turns the phrase above into concrete actions
++        throw new io.cucumber.java.PendingException();
++    }
++    @Then("The second virologist cannot step due to the virus")
++    public void the_second_virologist_cannot_step_due_to_the_virus() {
++        // Write code here that turns the phrase above into concrete actions
++        throw new io.cucumber.java.PendingException();
++
++    }
