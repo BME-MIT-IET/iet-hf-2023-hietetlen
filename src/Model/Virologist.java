@@ -28,6 +28,8 @@ public class Virologist extends DefaultSubject<Virologist> implements Interactio
     private final List<GeneticCode> geneticCodes;
     private final List<Equipment> equipments;
     private final List<Agent> agents;
+
+
     private final List<Behaviour> behaviours;
     //States
     private Tile currentTile;
@@ -336,6 +338,8 @@ public class Virologist extends DefaultSubject<Virologist> implements Interactio
         if (b == null) throw new IllegalArgumentException("The passed Behaviour cannot be null.");
         behaviours.add(b);
     }
+
+
 
     /**
      * Removes a given behaviour from the virologist's collection.

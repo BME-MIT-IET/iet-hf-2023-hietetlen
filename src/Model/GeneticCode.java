@@ -13,7 +13,6 @@ import java.util.function.Supplier;
  * Agents. Upon instantiation, it receives an Effect supplier
  * which determines the type of Agent that the given instance of
  * the class will produce.
- *
  * For each type of Agent, only a single instance of this class should exist,
  * because the instances of the GeneticCodes can be used to determine whether
  * any of the Virologists has collected all of them.
@@ -60,7 +59,7 @@ public class GeneticCode extends DefaultSubject<GeneticCode> {
      * See also {@link #makeVirus(SubstanceContainer)}.
      *
      * @param sc The reference of the substance container of a virologist.
-     * @return The new vaccine agent (or null if the virologist did not have enough substance.
+     * @return The new vaccine agent (or null if the virologist did not have enough substance).
      */
     public Agent makeVaccine(SubstanceContainer sc) {
         if (sc.use(cost)) {
