@@ -1,0 +1,6 @@
+# Build keretrendszer és CI beüzemelése
+## _(Blága Zsolt László - blagazsolt)_
+
+A projekthez a Gradle által nyújtott build keretrendszert választottam, aminek az indoka, hogy ezzel foglalkoztam már korábban is. A projekt importálása úgy történt, hogy létrehoztam egy gradle.build állományt a projekt gyökerében, ezt az Intellij fordító felismerte, és automatikusan legenerálta a szükséges állományokat.  
+
+A CI megvalósításhoz, GitHub-on létrehoztame egy workflow-t amely minden push és pull-request eseményre elindul, és a gradle-build Action segítségével elvégzi a fordítást. Ez azért hasznos, mert így tesztelhetjük, hogy egy a sajátunktól független rendszerben is furdul-e a projekt. 
